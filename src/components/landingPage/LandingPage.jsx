@@ -1,113 +1,156 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import "./LandingPage.css";
+import {
+  AppBar,
+  Toolbar,
+  Typography,
+  Button,
+  Box,
+  Grid,
+  Container,
+  Card,
+  CardContent,
+} from "@mui/material";
 
 function LandingPage() {
   const [open, setOpen] = useState(false);
 
-  const links = [
-    { path: "/", name: "Home" },
-    { path: "/login", name: "Login" },
-    { path: "/register", name: "Register" },
-  ];
-
   return (
-    <div className="page">
-      {/* 🔝 NAVBAR */}
-      <header className="navbar">
-        <div className="navContainer">
-          {/* LOGO */}
-          <div className="logoContainer">
-            <img src="/logo.png" alt="logo" className="logoImg" />
-            <h2 className="logoText">KisanMart</h2>
-          </div>
+    <Box>
+      <AppBar position="static" sx={{ background: "#6c63ff" }}>
+        <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
+          <Typography variant="h6">KisanMart </Typography>
 
-          <nav className={`navLinks ${open ? "active" : ""}`}>
-            {links.map((item) => (
-              <Link key={item.name} to={item.path} className="navLink">
-                {item.name}
-              </Link>
+          <Box>
+            <Button color="inherit" component={Link} to="/">
+              Home
+            </Button>
+            <Button color="inherit" component={Link} to="/login">
+              Login
+            </Button>
+            <Button color="inherit" component={Link} to="/register">
+              Register
+            </Button>
+          </Box>
+        </Toolbar>
+      </AppBar>
+
+      <Container sx={{ py: 6 }}>
+        <Grid container spacing={4} alignItems="center">
+          <Grid item xs={12} md={6}>
+            <Typography variant="h3" gutterBottom>
+              Empowering Farmers
+            </Typography>
+            <Typography variant="body1" sx={{ mb: 3 }}>
+              Fresh products directly from farms to your home.
+            </Typography>
+
+            <Button variant="contained" sx={{ mr: 2, background: "#6c63ff" }}>
+              Shop Now
+            </Button>
+
+            <Button variant="outlined">Join Us</Button>
+          </Grid>
+
+          <Grid item xs={12} md={6}>
+            <img
+              src="https://images.unsplash.com/photo-1592928302636-c83cf1bda1c6"
+              alt="farm"
+              style={{ width: "100%", borderRadius: "10px" }}
+            />
+          </Grid>
+        </Grid>
+      </Container>
+
+      <Box sx={{ background: "#f5f7fb", py: 5 }}>
+        <Container>
+          <Grid container spacing={3}>
+            {[
+              { value: "500+", label: "Farmers Connected" },
+              { value: "10K+", label: "Customers" },
+              { value: "100%", label: "Fresh Products" },
+            ].map((item) => (
+              <Grid item xs={12} md={4} key={item.label}>
+                <Card>
+                  <CardContent sx={{ textAlign: "center" }}>
+                    <Typography variant="h4">{item.value}</Typography>
+                    <Typography>{item.label}</Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
             ))}
-          </nav>
+          </Grid>
+        </Container>
+      </Box>
 
-          <div className="menuIcon" onClick={() => setOpen(!open)}>
-            ☰
-          </div>
-        </div>
-      </header>
+      <Container sx={{ py: 6 }}>
+        <Typography variant="h4" align="center" gutterBottom>
+          Why Choose KisanMart?
+        </Typography>
 
-      {/* 🌾 HERO */}
-      <section className="hero">
-        <div className="heroContent">
-          <h1>Empowering Farmers 🌾</h1>
-          <p>Fresh products directly from farms to your home.</p>
+        <Grid container spacing={3}>
+          {[
+            " Fresh from Farms",
+            "Best Market Prices",
+            " Direct Farmer Supply",
+            "Fast Delivery",
+          ].map((text) => (
+            <Grid item xs={12} md={3} key={text}>
+              <Card>
+                <CardContent sx={{ textAlign: "center" }}>
+                  <Typography>{text}</Typography>
+                </CardContent>
+              </Card>
+            </Grid>
+          ))}
+        </Grid>
+      </Container>
 
-          <div className="heroButtons">
-            <button className="primaryBtn">Shop Now</button>
-            <button className="secondaryBtn">Join Us</button>
-          </div>
-        </div>
+      <Box sx={{ background: "#f5f7fb", py: 6 }}>
+        <Container>
+          <Typography variant="h4" align="center" gutterBottom>
+            Popular Categories
+          </Typography>
 
-        <div className="heroImage">
-          <img src="https://images.unsplash.com/photo-1592928302636-c83cf1bda1c6" />
-        </div>
-      </section>
+          <Grid container spacing={3}>
+            {[" Vegetables", " Fruits", "Grains", " Dairy"].map((cat) => (
+              <Grid item xs={12} md={3} key={cat}>
+                <Card>
+                  <CardContent sx={{ textAlign: "center" }}>
+                    <Typography>{cat}</Typography>
+                  </CardContent>
+                </Card>
+              </Grid>
+            ))}
+          </Grid>
+        </Container>
+      </Box>
 
-      {/* 📊 STATS */}
-      <section className="stats">
-        <div className="statBox">
-          <h2>500+</h2>
-          <p>Farmers Connected</p>
-        </div>
-        <div className="statBox">
-          <h2>10K+</h2>
-          <p>Customers</p>
-        </div>
-        <div className="statBox">
-          <h2>100%</h2>
-          <p>Fresh Products</p>
-        </div>
-      </section>
+      <Box sx={{ py: 6, textAlign: "center" }}>
+        <Typography variant="h4" gutterBottom>
+          Start Your Journey with KisanMart
+        </Typography>
 
-      {/* 🛒 FEATURES */}
-      <section className="section">
-        <h2 className="sectionTitle">Why Choose KisanMart?</h2>
+        <Typography sx={{ mb: 3 }}>
+          Join today and experience fresh, direct-from-farm shopping.
+        </Typography>
 
-        <div className="grid">
-          <div className="card">🌿 Fresh from Farms</div>
-          <div className="card">💰 Best Market Prices</div>
-          <div className="card">🚜 Direct Farmer Supply</div>
-          <div className="card">⚡ Fast Delivery</div>
-        </div>
-      </section>
+        <Button
+          variant="contained"
+          component={Link}
+          to="/register"
+          sx={{ background: "#6c63ff" }}
+        >
+          Get Started
+        </Button>
+      </Box>
 
-      {/* 🥕 CATEGORIES */}
-      <section className="section categorySection">
-        <h2 className="sectionTitle">Popular Categories</h2>
-
-        <div className="grid">
-          <div className="categoryCard">🥦 Vegetables</div>
-          <div className="categoryCard">🍎 Fruits</div>
-          <div className="categoryCard">🌾 Grains</div>
-          <div className="categoryCard">🥛 Dairy</div>
-        </div>
-      </section>
-
-      {/* 🚀 CTA */}
-      <section className="cta">
-        <h2>Start Your Journey with KisanMart</h2>
-        <p>Join today and experience fresh, direct-from-farm shopping.</p>
-
-        <Link to="/register">
-          <button className="primaryBtn">Get Started</button>
-        </Link>
-      </section>
-
-      {/* 📞 FOOTER */}
-      <footer className="footer">
-        <p>© 2026 KisanMart. All rights reserved.</p>
-      </footer>
-    </div>
+      <Box
+        sx={{ background: "#333", color: "white", py: 2, textAlign: "center" }}
+      >
+        <Typography>© 2026 KisanMart. All rights reserved.</Typography>
+      </Box>
+    </Box>
   );
 }
 

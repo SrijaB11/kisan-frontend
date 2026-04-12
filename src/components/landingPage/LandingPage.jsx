@@ -1,156 +1,67 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import {
-  AppBar,
-  Toolbar,
-  Typography,
-  Button,
-  Box,
-  Grid,
-  Container,
-  Card,
-  CardContent,
-} from "@mui/material";
+import React from "react";
+import "./LandingPage.css";
+import { useNavigate } from "react-router-dom";
+import logo from "../../assets/logo.png";
 
 function LandingPage() {
-  const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
 
   return (
-    <Box>
-      <AppBar position="static" sx={{ background: "#6c63ff" }}>
-        <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-          <Typography variant="h6">KisanMart </Typography>
+    <div className="landing">
+      <div className="navbar">
+        <div className="logo-box">
+          <img src={logo} alt="logo" />
+          <h2>KisanMart</h2>
+        </div>
 
-          <Box>
-            <Button color="inherit" component={Link} to="/">
-              Home
-            </Button>
-            <Button color="inherit" component={Link} to="/login">
-              Login
-            </Button>
-            <Button color="inherit" component={Link} to="/register">
-              Register
-            </Button>
-          </Box>
-        </Toolbar>
-      </AppBar>
+        <div className="nav-links">
+          <button onClick={() => navigate("/login")}>Login</button>
+          <button className="register" onClick={() => navigate("/register")}>
+            Register
+          </button>
+        </div>
+      </div>
 
-      <Container sx={{ py: 6 }}>
-        <Grid container spacing={4} alignItems="center">
-          <Grid item xs={12} md={6}>
-            <Typography variant="h3" gutterBottom>
-              Empowering Farmers
-            </Typography>
-            <Typography variant="body1" sx={{ mb: 3 }}>
-              Fresh products directly from farms to your home.
-            </Typography>
+      <div className="hero">
+        <div className="hero-left">
+          <h1>Fresh Products Direct from Farmers</h1>
+          <p>
+            Buy organic vegetables, fruits and farming essentials directly from
+            trusted farmers.
+          </p>
 
-            <Button variant="contained" sx={{ mr: 2, background: "#6c63ff" }}>
-              Shop Now
-            </Button>
+          <button onClick={() => navigate("/login")}>Shop Now</button>
+        </div>
 
-            <Button variant="outlined">Join Us</Button>
-          </Grid>
+        <div className="hero-right">
+          <img src={logo} alt="farmer" />
+        </div>
+      </div>
 
-          <Grid item xs={12} md={6}>
-            <img
-              src="https://images.unsplash.com/photo-1592928302636-c83cf1bda1c6"
-              alt="farm"
-              style={{ width: "100%", borderRadius: "10px" }}
-            />
-          </Grid>
-        </Grid>
-      </Container>
+      <div className="features">
+        <div className="feature">
+          <img src="https://img.icons8.com/ios-filled/50/delivery.png" alt="" />
+          <h3>Fast Delivery</h3>
+          <p>Quick and reliable delivery service</p>
+        </div>
 
-      <Box sx={{ background: "#f5f7fb", py: 5 }}>
-        <Container>
-          <Grid container spacing={3}>
-            {[
-              { value: "500+", label: "Farmers Connected" },
-              { value: "10K+", label: "Customers" },
-              { value: "100%", label: "Fresh Products" },
-            ].map((item) => (
-              <Grid item xs={12} md={4} key={item.label}>
-                <Card>
-                  <CardContent sx={{ textAlign: "center" }}>
-                    <Typography variant="h4">{item.value}</Typography>
-                    <Typography>{item.label}</Typography>
-                  </CardContent>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </Container>
-      </Box>
+        <div className="feature">
+          <img src="https://img.icons8.com/ios-filled/50/leaf.png" alt="" />
+          <h3>Organic Products</h3>
+          <p>Healthy and natural farm products</p>
+        </div>
 
-      <Container sx={{ py: 6 }}>
-        <Typography variant="h4" align="center" gutterBottom>
-          Why Choose KisanMart?
-        </Typography>
+        <div className="feature">
+          <img src="https://img.icons8.com/ios-filled/50/money.png" alt="" />
+          <h3>Best Prices</h3>
+          <p>Affordable rates for everyone</p>
+        </div>
+      </div>
 
-        <Grid container spacing={3}>
-          {[
-            " Fresh from Farms",
-            "Best Market Prices",
-            " Direct Farmer Supply",
-            "Fast Delivery",
-          ].map((text) => (
-            <Grid item xs={12} md={3} key={text}>
-              <Card>
-                <CardContent sx={{ textAlign: "center" }}>
-                  <Typography>{text}</Typography>
-                </CardContent>
-              </Card>
-            </Grid>
-          ))}
-        </Grid>
-      </Container>
-
-      <Box sx={{ background: "#f5f7fb", py: 6 }}>
-        <Container>
-          <Typography variant="h4" align="center" gutterBottom>
-            Popular Categories
-          </Typography>
-
-          <Grid container spacing={3}>
-            {[" Vegetables", " Fruits", "Grains", " Dairy"].map((cat) => (
-              <Grid item xs={12} md={3} key={cat}>
-                <Card>
-                  <CardContent sx={{ textAlign: "center" }}>
-                    <Typography>{cat}</Typography>
-                  </CardContent>
-                </Card>
-              </Grid>
-            ))}
-          </Grid>
-        </Container>
-      </Box>
-
-      <Box sx={{ py: 6, textAlign: "center" }}>
-        <Typography variant="h4" gutterBottom>
-          Start Your Journey with KisanMart
-        </Typography>
-
-        <Typography sx={{ mb: 3 }}>
-          Join today and experience fresh, direct-from-farm shopping.
-        </Typography>
-
-        <Button
-          variant="contained"
-          component={Link}
-          to="/register"
-          sx={{ background: "#6c63ff" }}
-        >
-          Get Started
-        </Button>
-      </Box>
-
-      <Box
-        sx={{ background: "#333", color: "white", py: 2, textAlign: "center" }}
-      >
-        <Typography>© 2026 KisanMart. All rights reserved.</Typography>
-      </Box>
-    </Box>
+      <div className="footer">
+        <p>© 2026 KisanMart. All rights reserved.</p>
+      </div>
+    </div>
   );
 }
 

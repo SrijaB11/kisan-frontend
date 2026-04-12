@@ -1,0 +1,15 @@
+/* PAGE */
+.admin-orders {
+  background: #f3f3f3;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* TITLE */
+.admin-title {
+  font-size: 26px;
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+/* ORDER CARD spacing handled in OrderDetails */

@@ -15,7 +15,7 @@ function Login() {
   async function login(event) {
     event.preventDefault();
     setisLoading(true);
-    // validations
+
     if (email == "" || password == "") {
       alert("please fill all the details");
       setisLoading(false);
@@ -30,6 +30,7 @@ function Login() {
     try {
       let res = await axios.post(`${BASE_URL}/customer/login`, formData);
       let token = res.data.token;
+      // localStorage.setItem("user", JSON.stringify(res.data.user));
       localStorage.setItem("token", token);
       let decoded = jwtDecode(token);
       if (decoded.role == "admin") {

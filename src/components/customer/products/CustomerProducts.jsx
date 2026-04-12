@@ -1,7 +1,7 @@
-import { useEffect, useState } from "react";
 import axios from "axios";
-import CustomerProductCard from "./CustomerProductCard";
-import { Grid } from "@mui/material";
+import React, { useEffect, useState } from "react";
+import ProductCard from "./ProductCard";
+import "./CustomerProducts.css";
 
 function CustomerProducts() {
   const [products, setProducts] = useState([]);
@@ -11,12 +11,9 @@ function CustomerProducts() {
       let res = await axios.get(
         `${process.env.REACT_APP_BE_API_URL}/product/getAll`,
       );
-
-      const data = Array.isArray(res.data) ? res.data : res.data.products || [];
-
-      setProducts(data);
+      setProducts(res.data);
     } catch (err) {
-      console.error(err);
+      console.log(err);
     }
   }
 
@@ -25,13 +22,11 @@ function CustomerProducts() {
   }, []);
 
   return (
-    <Grid container spacing={3}>
+    <div className="customer-products">
       {products.map((item) => (
-        <Grid item xs={12} sm={6} md={4} lg={3} key={item._id}>
-          <CustomerProductCard item={item} />
-        </Grid>
+        <ProductCard item={item} key={item._id} />
       ))}
-    </Grid>
+    </div>
   );
 }
 

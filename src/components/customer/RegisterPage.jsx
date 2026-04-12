@@ -4,8 +4,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 
 function RegisterPage() {
-  // let BASE_URL = process.env.REACT_APP_BE_API_URL;
-  let BASE_URL = "http://localhost:5000";
+  let BASE_URL = process.env.REACT_APP_BE_API_URL;
   const [name, setname] = useState("");
   const [number, setnumber] = useState("");
   const [email, setemail] = useState("");
@@ -158,7 +157,7 @@ function RegisterPage() {
           Already registered? <Link to="/login">login</Link>
         </Box>
       </Box>
-      {/* popup */}
+
       <Snackbar
         open={open}
         autoHideDuration={6000}

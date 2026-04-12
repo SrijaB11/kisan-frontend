@@ -1,0 +1,90 @@
+.customers-container {
+  padding: 20px;
+}
+
+.customers-container h2 {
+  margin-bottom: 15px;
+}
+
+.customer-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+
+.customer-form input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+.customer-form button {
+  background: #16a34a;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.customer-form button:hover {
+  background: #15803d;
+}
+
+.table-wrapper {
+  overflow-x: auto;
+}
+
+.customers-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: white;
+}
+
+.customers-table th,
+.customers-table td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+.customers-table th {
+  background: #f4f4f4;
+}
+
+.customers-table tr:hover {
+  background: #f9f9f9;
+}
+
+.edit-btn {
+  background: #2563eb;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  margin-right: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.delete-btn {
+  background: #dc2626;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.edit-btn:hover {
+  background: #1d4ed8;
+}
+
+.delete-btn:hover {
+  background: #b91c1c;
+}
+
+@media (max-width: 600px) {
+  .customer-form {
+    flex-direction: column;
+  }
+}

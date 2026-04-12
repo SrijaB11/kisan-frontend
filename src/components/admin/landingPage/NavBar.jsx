@@ -5,17 +5,18 @@ import KeyboardDoubleArrowLeftIcon from "@mui/icons-material/KeyboardDoubleArrow
 import { useNavigate } from "react-router-dom";
 import PeopleIcon from "@mui/icons-material/People";
 import ShoppingBasketIcon from "@mui/icons-material/ShoppingBasket";
+import { FaUsers, FaBox, FaShoppingCart, FaChartBar } from "react-icons/fa";
 
 function NavBar() {
   const [isMenuClose, setisMenuClose] = useState(false);
   let navigate = useNavigate();
-  let navItems = [
-    { name: "Customers", icon: <PeopleIcon />, href: "/admin/customers" },
-    { name: "Products", icon: <ShoppingBasketIcon />, href: "/admin/products" },
-    // { name: "Customers", icon: <DashboardIcon />, href: "/customers" },
-    // { name: "Customers", icon: <DashboardIcon />, href: "/customers" },
-  ];
 
+  const navItems = [
+    { name: "Dashboard", icon: <FaChartBar />, href: "/admin" },
+    { name: "Customers", icon: <FaUsers />, href: "/admin/customers" },
+    { name: "Products", icon: <FaBox />, href: "/admin/products" },
+    { name: "Orders", icon: <FaShoppingCart />, href: "/admin/orders" },
+  ];
   function handleMenu() {
     if (isMenuClose == true) {
       setisMenuClose(false);
@@ -24,8 +25,7 @@ function NavBar() {
     setisMenuClose(true);
   }
   return (
-    // <div>
-    <div
+    <nav
       className={styles.sideBarContainer}
       style={{
         width: isMenuClose ? "70px" : "400px",
@@ -58,7 +58,7 @@ function NavBar() {
         })}
       </div>
       <div className={styles.footer}></div>
-    </div>
+    </nav>
     // </div>
   );
 }

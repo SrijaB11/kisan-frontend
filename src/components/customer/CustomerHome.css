@@ -1,0 +1,43 @@
+.customer-home {
+  padding: 20px;
+  background: #f3f3f3;
+  min-height: 100vh;
+}
+
+.customer-home h2 {
+  margin-bottom: 20px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.icon {
+  font-size: 30px;
+  margin-bottom: 10px;
+  color: #1976d2;
+}
+
+.card h3 {
+  margin: 10px 0;
+}
+
+.card p {
+  font-size: 18px;
+  font-weight: bold;
+}

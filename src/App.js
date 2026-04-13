@@ -9,7 +9,7 @@ import LandingPage from "./components/landingPage/LandingPage";
 import Customers from "./components/admin/customer/Customers";
 import Products from "./components/admin/products/Products";
 import Protected from "./components/ProtectedRoute/Protected";
-import CustomerProducts from "./components/customer/Products/CustomerProducts";
+// import CustomerProducts from "./components/customer/Products/CustomerProducts";
 import CartItems from "./components/customer/Cart/CartItems";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
@@ -18,6 +18,7 @@ import Orders from "./components/customer/orders/Orders";
 import AdminHome from "./components/admin/AdminHome";
 import AdmminOrders from "./components/admin/orders/AdminOrders";
 import CustomerHome from "./components/customer/CustomerHome";
+import CustomerProducts from "./components/customer/Products/CustomerProducts";
 
 function App() {
   return (

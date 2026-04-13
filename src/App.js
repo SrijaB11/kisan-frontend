@@ -18,7 +18,7 @@ import Orders from "./components/customer/orders/Orders";
 import AdminHome from "./components/admin/AdminHome";
 import AdmminOrders from "./components/admin/orders/AdminOrders";
 import CustomerHome from "./components/customer/CustomerHome";
-import CustomerProducts from "./components/customer/Products/CustomerProducts";
+import CustomerProducts from "./components/customer/products/CustomerProducts";
 
 function App() {
   return (

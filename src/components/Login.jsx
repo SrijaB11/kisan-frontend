@@ -5,8 +5,8 @@ import { jwtDecode } from "jwt-decode";
 import { Link, useNavigate } from "react-router-dom";
 
 function Login() {
-  // let BASE_URL = process.env.REACT_APP_BE_API_URL;
-  let BASE_URL = "https://kisan-backend-6.onrender.com";
+  let BASE_URL = process.env.REACT_APP_BE_API_URL;
+
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
   const [isLoading, setisLoading] = useState(false);

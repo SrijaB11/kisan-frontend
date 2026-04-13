@@ -4,10 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { fetchCart } from "../../redux/cartSlice";
 
-
 import { FaShoppingCart, FaUserCircle } from "react-icons/fa";
 import { MdSearch, MdArrowDropDown } from "react-icons/md";
-
 
 import logo from "../../assets/logo.png";
 
@@ -25,7 +23,6 @@ function CustomerNavbar() {
 
     const storedUser = localStorage.getItem("user");
 
-   
     if (!storedUser || storedUser === "undefined") {
       setUser({});
       return;
@@ -46,17 +43,14 @@ function CustomerNavbar() {
 
   const handleSearch = () => {
     console.log("Searching:", search);
-  
   };
   return (
     <div className="navbar">
- 
       <div className="nav-left" onClick={() => navigate("/customer")}>
         <img src={logo} alt="logo" />
         <h2>KisanMart</h2>
       </div>
 
-}
       <div className="nav-search">
         <input
           type="text"
@@ -70,7 +64,6 @@ function CustomerNavbar() {
       </div>
 
       <div className="nav-right">
- 
         <div className="nav-user" onClick={() => setDropdown(!dropdown)}>
           <FaUserCircle size={28} />
           <div>
@@ -90,7 +83,6 @@ function CustomerNavbar() {
           )}
         </div>
 
-  
         <div className="nav-cart" onClick={() => navigate("/customer/cart")}>
           <FaShoppingCart size={22} />
           <span>{cartItems.length}</span>

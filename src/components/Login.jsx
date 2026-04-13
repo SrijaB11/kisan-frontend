@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 
 function Login() {
   // let BASE_URL = process.env.REACT_APP_BE_API_URL;
-  let BASE_URL = "http://localhost:5000";
+  let BASE_URL = "https://kisan-backend-6.onrender.com";
   const [email, setemail] = useState("");
   const [password, setpassword] = useState("");
   const [isLoading, setisLoading] = useState(false);

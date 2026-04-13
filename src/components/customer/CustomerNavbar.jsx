@@ -85,7 +85,7 @@ function CustomerNavbar() {
 
         <div className="nav-cart" onClick={() => navigate("/customer/cart")}>
           <FaShoppingCart size={22} />
-          <span>{cartItems.length}</span>
+          {/* <span>{cartItems.length}</span> */}
         </div>
       </div>
     </div>

@@ -2,7 +2,6 @@
   padding: 20px;
 }
 
-/* FORM */
 .add-form {
   display: flex;
   flex-wrap: wrap;
@@ -26,14 +25,12 @@
   cursor: pointer;
 }
 
-/* GRID */
 .products-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 20px;
 }
 
-/* CARD */
 .product-card {
   background: white;
   border-radius: 10px;
@@ -57,7 +54,6 @@
   margin: 0;
 }
 
-/* BADGE */
 .badge {
   display: flex;
   justify-content: space-between;
@@ -72,7 +68,6 @@
   font-size: 12px;
 }
 
-/* ACTIONS */
 .actions {
   margin-top: 10px;
   display: flex;
@@ -97,7 +92,6 @@
   color: white;
 }
 
-/* 📱 RESPONSIVE */
 @media (max-width: 900px) {
   .products-grid {
     grid-template-columns: repeat(2, 1fr);

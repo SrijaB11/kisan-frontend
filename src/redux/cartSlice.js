@@ -27,7 +27,7 @@ const cartSlice = createSlice({
     incCount: (state, action) => {
       let arr = state.cart;
       let newArr = arr.map((item, ind) => {
-        if (item._id == action.payload) {
+        if (item._id === action.payload) {
           return {
             ...item,
             count: item.count + 1,
@@ -40,7 +40,7 @@ const cartSlice = createSlice({
     decCount: (state, action) => {
       let arr = state.cart;
       let newArr = arr.map((item, ind) => {
-        if (item._id == action.payload) {
+        if (item._id === action.payload) {
           return {
             ...item,
             count: item.count - 1,
@@ -53,7 +53,7 @@ const cartSlice = createSlice({
     deleteItem: (state, action) => {
       let arr = state.cart;
       let newArr = arr.filter((item, ind) => {
-        if (item._id == action.payload) {
+        if (item._id === action.payload) {
           return false;
         }
         return true;

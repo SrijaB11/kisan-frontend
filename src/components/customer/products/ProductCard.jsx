@@ -24,7 +24,6 @@ function ProductCard({ item }) {
       );
 
       alert("Added to cart");
-
       dispatch(
         add([
           {
@@ -64,4 +63,3 @@ function ProductCard({ item }) {
 }
 
 export default ProductCard;
-

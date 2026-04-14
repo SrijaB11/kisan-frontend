@@ -41,8 +41,12 @@ function CustomerNavbar() {
     navigate("/");
   };
 
+  // const handleSearch = () => {
+  //   console.log("Searching:", search);
+  // };
   const handleSearch = () => {
-    console.log("Searching:", search);
+    if (!search.trim()) return;
+    navigate(`/customer/products?search=${search}`);
   };
   return (
     <div className="navbar">
@@ -57,6 +61,7 @@ function CustomerNavbar() {
           placeholder="Search products..."
           value={search}
           onChange={(e) => setSearch(e.target.value)}
+          onKeyDown={(e) => e.key === "Enter" && handleSearch()}
         />
         <button onClick={handleSearch}>
           <MdSearch size={22} />
